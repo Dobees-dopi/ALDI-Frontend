@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "554398395959",
+    "project_id": "ume123-cad6f",
+    "storage_bucket": "ume123-cad6f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:554398395959:android:1f91946201934eb97a19b2",
+        "android_client_info": {
+          "package_name": "com.example.app_umi_test"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBRqWOYg_5DKDGABzj90Y-WBpt-NdwuE0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
