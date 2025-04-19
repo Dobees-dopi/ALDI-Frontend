@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:umi/widgets/app_bar/app_bar.dart';
 import 'package:get/get.dart';
-import 'dart:math';
 import 'package:umi/screens/profiles/post_item.dart';
 
 class CommunityProfilePage extends StatefulWidget {
@@ -69,14 +68,7 @@ class _CommunityProfilePageState extends State<CommunityProfilePage> {
             centerTitle: true,
             backgroundColor: Colors.transparent,
             elevation: 0,
-            actions: <Widget>[
-              IconButton(
-                icon: const Icon(Icons.settings_outlined,   color: Colors.black87,),
-                onPressed: () {
-                  Get.toNamed('/settingmain');
-                },
-              ),
-            ],
+         
           ),
         ),
         bottomNavigationBar: MyBottomNavigationBar(selectedIndex: widget.selectedIndex),
@@ -123,14 +115,14 @@ class _CommunityProfilePageState extends State<CommunityProfilePage> {
                                   Text(
                                     '팔로워',
                                     style: TextStyle(
-                                      color: Colors.black,
+                             color: Colors.transparent,
                                       fontSize: 16,
                                     ),
                                   ),
                                   Text(
                                     '120',
                                     style: TextStyle(
-                                      color: Colors.black,
+                                      color: Colors.transparent,
                                       fontSize: 18,
                                       fontWeight: FontWeight.bold,
                                     ),
@@ -172,14 +164,14 @@ class _CommunityProfilePageState extends State<CommunityProfilePage> {
                                   Text(
                                     '팔로잉',
                                     style: TextStyle(
-                                      color: Colors.black,
+                                      color: Colors.transparent,
                                       fontSize: 16,
                                     ),
                                   ),
                                   Text(
                                     '108',
                                     style: TextStyle(
-                                      color: Colors.black,
+                                  color: Colors.transparent,
                                       fontSize: 18,
                                       fontWeight: FontWeight.bold,
                                     ),
@@ -191,7 +183,7 @@ class _CommunityProfilePageState extends State<CommunityProfilePage> {
                         ),
                         SizedBox(height: 10),
                         Text(
-                          '모야모야삐',
+                          '이름',
                           style: TextStyle(
                             color: Colors.black, // Black text color
                             fontSize: 20,
@@ -199,7 +191,7 @@ class _CommunityProfilePageState extends State<CommunityProfilePage> {
                           ),
                         ),
                         Text(
-                          '관상어 대표로 키우는 중',
+                          '인사말?',
                           style: TextStyle(
                             color: Colors.black, // Black text color
                             fontSize: 16,
@@ -231,27 +223,7 @@ class _CommunityProfilePageState extends State<CommunityProfilePage> {
 
 SizedBox(width: 10),
 
-GestureDetector(
-  onTap: () {
-    // Button action
-  },
-  child: Container(
-    padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 20.0),
-    decoration: BoxDecoration(
-      color: Colors.white, // Background color
-      border: Border.all(color: Colors.grey.shade300, width: 0.5), // Border color
-      borderRadius: BorderRadius.circular(20.0), // Rounded corners
-  
-    ),
-    child: Text(
-      '언팔로우',
-      style: TextStyle(
-        color: Colors.orange,
-        fontSize: 14,
-      ),
-    ),
-  ),
-),
+
 
                           ],
                         ),
@@ -289,7 +261,7 @@ GestureDetector(
                         child: Padding(
                           padding: const EdgeInsets.only(left: 16.0),
                           child: Text(
-                            "게시글 $index",
+                            "일정 $index",
                             style: TextStyle(
                               color: Colors.black54, // 선택된 아이콘의 색상 변경
                               fontSize: 15,
@@ -315,19 +287,8 @@ GestureDetector(
                           size: 24,
                         ),
                       ),
-                      const SizedBox(width: 16),
-                      GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            isListView = true;
-                          });
-                        },
-                        child: Icon(
-                          Icons.menu,
-                          color: isListView ? Colors.blue : Colors.black54, // 선택된 아이콘의 색상 변경
-                          size: 24,
-                        ),
-                      ),
+                
+                     
                       const SizedBox(width: 16),
                     ],
                   ),
@@ -337,21 +298,8 @@ GestureDetector(
            Container(
               height: 600,
               color: const Color.fromARGB(255, 255, 255, 255),
-              child: isListView
-                  ? ListView.builder(
-                      padding: EdgeInsets.zero, // Remove padding to ensure content starts from the top
-                      itemCount: index,
-                      itemBuilder: (context, index) {
-                        // 임의로 이미지를 가진 포스트와 그렇지 않은 포스트를 구분
-                        bool hasImage = index % 2 == 0;
-                        return PostItem(
-                          title: '어항 청소했는데 너무 피곤하네요.',
-                          subtitle: '여러분들은 어항 청소를 얼마나 자주하시나요? 저는 자주자주 갈아주는 편인데도 금방 더러워지는 것 같네요. ㅠㅠ 물고기 가족들이 많이 늘어나서 그런 것 같기도 하네요.',
-                          hasImage: hasImage,
-                        );
-                      },
-                    )
-                  : GridView.builder(
+              child: 
+                   GridView.builder(
                       padding: EdgeInsets.zero, // Remove padding to ensure content starts from the top
                       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 3,

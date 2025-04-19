@@ -394,7 +394,7 @@ class _DiaryPageState extends State<DiaryPage> {
                       duration: const Duration(milliseconds: 100),
                       height: _calendarFormat == CalendarFormat.month
                           ? calendarHeight
-                          : 170.0 + calender_heigh_add,
+                          : 140.0 + calender_heigh_add,
                       width: double.infinity,
                       decoration: BoxDecoration(
                         color: Temas.backgroundcolor,
@@ -449,26 +449,15 @@ class _DiaryPageState extends State<DiaryPage> {
                                   20.0), // Padding for the text inside the container
                               decoration: BoxDecoration(
                                 color: Temas.whitearea,
-                                border: Border.all(
-                                  // 테두리 추가
-                                  color: const Color(0xA5D9D9D9), // 테두리 색상
-                                  width: 1, // 테두리 두께
-                                ),
+                            
                                 borderRadius: BorderRadius.circular(35.0),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.grey.withOpacity(0.3),
-                                    spreadRadius: 1,
-                                    blurRadius: 10,
-                                    offset: const Offset(0, 3), // 그림자 위치 조정
-                                  ),
-                                ],
+                              
                               ),
                               child: Text(
-                                '${controller.isOnline.value ? '온라인' : '오프라인'}',
+                                '클릭하여 일정을 추가해보세요',
                                 style: TextStyle(
                                   fontWeight: FontWeight.w500,
-                                  fontSize: 22,
+                                  fontSize: 20,
                                   color: Temas.maincolor,
                                 ),
                                 textAlign: TextAlign
@@ -488,10 +477,8 @@ class _DiaryPageState extends State<DiaryPage> {
               padding: const EdgeInsets.only(top: 30.0),
               child: Column(
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.only(
-                        top: 5, bottom: 0, left: 7.5, right: 7.5),
-                    child: CategoryListView(),
+                 SizedBox(
+                    height: 30,
                   ),
                   Expanded(
                     child: Stack(
@@ -764,7 +751,7 @@ class _DiaryPageState extends State<DiaryPage> {
                       color: Temas.whiticon,
                     ),
                     label: Text(
-                      '메모',
+                      '일정',
                       style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,

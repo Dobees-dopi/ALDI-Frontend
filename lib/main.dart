@@ -119,7 +119,7 @@ void main() async {
     EasyLocalization(
       supportedLocales: [Locale('en', 'US'), Locale('ko', 'KR')], // 지원하는 언어 설정
       path: 'assets/translations', // 번역 파일 경로
-      fallbackLocale: Locale('en', 'US'), // 기본 언어 설정 (지원하지 않는 언어일 경우)
+      fallbackLocale: Locale('ko', 'KR'), // 기본 언어 설정 (지원하지 않는 언어일 경우)
       useOnlyLangCode: true, // 국가 코드 무시하고 언어 코드만 사용
       child: MyApp(), // 앱 위젯 실행
     ),
